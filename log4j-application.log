@@ -1,0 +1,26 @@
+2019-06-09 18:21:22 INFO  App:64 - Run: Over date load from internet!
+2019-06-09 18:21:22 INFO  ThreadGetEmpInf:40 - Run: Thread get employee infomation and crawle data from internet!
+2019-06-09 18:21:22 INFO  ThreadGetBlackLink:34 - Run: Thread get black link update file and crawle data from internet
+2019-06-09 18:21:22 INFO  ThreadGetBlackLink:18 - Run: Thread write properties information to file!
+2019-06-09 18:21:22 INFO  ThreadGetBlackLink:29 - End: Thread write properties information to file!
+2019-06-09 18:21:25 INFO  ThreadGetBlackLink:52 - End: Thread get black link update file and crawle data from internet
+2019-06-09 18:21:25 INFO  ThreadGetEmpInf:68 - End: Thread get employee infomation and crawle data from internet!
+2019-06-09 18:21:25 INFO  App:81 - End: Over date load from internet!
+2019-06-09 18:21:25 INFO  App:101 - Run: Load file log!
+2019-06-09 18:21:37 INFO  App:153 - End: Load file log!
+2019-06-09 18:21:37 INFO  App:202 - Run: Write list bad employee to file!
+2019-06-09 18:21:44 INFO  App:225 - End: Write list bad employee to file!
+2019-06-09 18:21:44 INFO  App:164 - Run: Send Email!
+2019-06-09 18:21:59 INFO  App:197 - Done: Send email!
+2019-06-09 18:22:51 INFO  App:83 - Run: Load from local!
+2019-06-09 18:22:51 INFO  ThreadReadEmpIf:21 - Run: Thread get employee infomation from loacal file!
+2019-06-09 18:22:52 INFO  ThreadReadEmpIf:31 - End: Thread get employee infomation from loacal file!
+2019-06-09 18:22:52 INFO  ThreadReadBlackLink:22 - Run: Thread get black links infomation from loacal file!
+2019-06-09 18:22:52 INFO  ThreadReadBlackLink:31 - End: Thread get black links infomation from loacal file!
+2019-06-09 18:22:52 INFO  App:97 - End: Load from local!
+2019-06-09 18:22:52 INFO  App:101 - Run: Load file log!
+2019-06-09 18:23:03 INFO  App:153 - End: Load file log!
+2019-06-09 18:23:03 INFO  App:202 - Run: Write list bad employee to file!
+2019-06-09 18:23:11 INFO  App:225 - End: Write list bad employee to file!
+2019-06-09 18:23:11 INFO  App:164 - Run: Send Email!
+2019-06-09 18:23:25 INFO  App:197 - Done: Send email!

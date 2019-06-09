@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -15,6 +16,8 @@ public class ThreadGetBlackLink implements Runnable {
 	public final String FILE_CONTAIN_BLACK_WHITE_LINKS = "DsDuAn.xlsx";
 	public final String SHEET_CONTAIN_BLACK_LINKS = "Ten_trang_cam";
 	public final String FILE_LIST_BLACK_OBJECT = "blackLink.dat";
+
+	final static Logger logger = Logger.getLogger(ThreadGetBlackLink.class);
 
 	private List<BlackLink> blackLinks = null;
 
@@ -28,7 +31,7 @@ public class ThreadGetBlackLink implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Run: Thread get black link update file and crawle data from internet");
+		logger.info("Run: Thread get black link update file and crawle data from internet");
 		// Load black list;
 		BlackLinkUtils blackLinkUtils = new BlackLinkUtils(FILE_CONTAIN_BLACK_WHITE_LINKS, SHEET_CONTAIN_BLACK_LINKS);
 		try {
@@ -46,6 +49,6 @@ public class ThreadGetBlackLink implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("End: Thread get black link update file and crawle data from internet");
+		logger.info("End: Thread get black link update file and crawle data from internet");
 	}
 }

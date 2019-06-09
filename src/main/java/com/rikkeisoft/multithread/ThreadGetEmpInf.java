@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -22,6 +23,8 @@ public class ThreadGetEmpInf implements Runnable {
 	public final String FILE_LIST_EMPLOYEE_OBJECT = "listEmployees.dat";
 	public final String FILE_LIST_BLACK_OBJECT = "blackLink.dat";
 
+	final static Logger logger = Logger.getLogger(ThreadGetEmpInf.class);
+
 	private List<Employee> employeeListHaveExceptedLink = null;
 
 	public List<Employee> getEmployeeListHaveExceptedLink() {
@@ -34,7 +37,7 @@ public class ThreadGetEmpInf implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Run: Thread get employee infomation and crawle data from internet!");
+		logger.info("Run: Thread get employee infomation and crawle data from internet!");
 		// Load employee from excel;
 		EmpoyeeUtils empoyeeUtils = new EmpoyeeUtils(FILE_CONTAIN_EMPLOYEE_IP, SHEET_CONTAIN_EMPLOYEE);
 		List<Employee> employeeList = null;
@@ -62,7 +65,7 @@ public class ThreadGetEmpInf implements Runnable {
 		} catch (IOException e2) {
 			e2.printStackTrace();
 		}
-		System.out.println("End: Thread get employee infomation and crawle data from internet!");
+		logger.info("End: Thread get employee infomation and crawle data from internet!");
 	}
 
 }

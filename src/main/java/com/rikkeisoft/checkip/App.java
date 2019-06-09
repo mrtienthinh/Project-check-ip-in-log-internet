@@ -17,6 +17,7 @@ import java.util.List;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.MultiPartEmail;
+import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
@@ -46,6 +47,8 @@ public class App {
 	private static final int PORT = 465;
 	private static final boolean SSL_FLAG = true;
 
+	final static Logger logger = Logger.getLogger(App.class);
+
 	public static void main(String[] args) throws IOException, EncryptedDocumentException, InvalidFormatException,
 			ParseException, ClassNotFoundException, InterruptedException {
 
@@ -58,7 +61,7 @@ public class App {
 		Date dateToCompare = new Date(fileBlackWhite.lastModified());
 
 		if (dateFileBlackWhite.compareTo(dateToCompare) < 0) {
-			System.out.println("Run: Over date load from internet!");
+			logger.info("Run: Over date load from internet!");
 			ThreadGetEmpInf threadGetEmpInf = new ThreadGetEmpInf();
 			ThreadGetBlackLink threadGetBlackLink = new ThreadGetBlackLink();
 			ThreadRecordProperties threadRecordProperties = new ThreadRecordProperties();
@@ -75,9 +78,9 @@ public class App {
 			employeeListHaveExceptedLink = threadGetEmpInf.getEmployeeListHaveExceptedLink();
 			blackLinks = threadGetBlackLink.getBlackLinks();
 
-			System.out.println("End: Over date load from internet!");
+			logger.info("End: Over date load from internet!");
 		} else {
-			System.out.println("Run: Load from local!");
+			logger.info("Run: Load from local!");
 			ThreadReadEmpIf threadReadEmpIf = new ThreadReadEmpIf();
 			ThreadReadBlackLink threadReadBlackLink = new ThreadReadBlackLink();
 
@@ -91,11 +94,11 @@ public class App {
 
 			employeeListHaveExceptedLink = threadReadEmpIf.getEmployeeListHaveExceptedLink();
 			blackLinks = threadReadBlackLink.getBlackLinks();
-			System.out.println("End: Load from local!");
+			logger.info("End: Load from local!");
 		}
 
 		// Load log file;
-		System.out.println("Run: Load file log!");
+		logger.info("Run: Load file log!");
 		BufferedReader reader = new BufferedReader(new FileReader(FILE_LOG));
 		List<EmployeeBlack> employeeBlacks = new ArrayList<>();
 		String line;
@@ -147,7 +150,7 @@ public class App {
 			}
 		}
 		reader.close();
-		System.out.println("End: Load file log!");
+		logger.info("End: Load file log!");
 
 		// Write bad employee to file!
 		writeToExcel(employeeBlacks);
@@ -158,7 +161,7 @@ public class App {
 	}
 
 	private static void sendMail() {
-		System.out.println("Run: Send Email!");
+		logger.info("Run: Send Email!");
 		String userName = "lethanh.hlht1993@gmail.com";
 		String password = "Lethanh.ht.@";
 
@@ -191,12 +194,12 @@ public class App {
 			System.out.println(ex);
 		}
 
-		System.out.println("Done: Send email!");
+		logger.info("Done: Send email!");
 	}
 
 	public static void writeToExcel(List<EmployeeBlack> employeeBlacks)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
-		System.out.println("Run: Write list bad employee to file!");
+		logger.info("Run: Write list bad employee to file!");
 		try {
 			FileInputStream fileInputStream = new FileInputStream("save.xlsx");
 			Workbook workbook = WorkbookFactory.create(fileInputStream);
@@ -219,7 +222,7 @@ public class App {
 			System.out.println("exception");
 		}
 
-		System.out.println("End: Write list bad employee to file!");
+		logger.info("End: Write list bad employee to file!");
 	}
 
 	public static Date getDateFileBlackWhite(String pathFile) throws IOException, ParseException {
