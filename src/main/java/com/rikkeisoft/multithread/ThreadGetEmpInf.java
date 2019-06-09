@@ -12,16 +12,14 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import com.rikkeisoft.model.Employee;
 import com.rikkeisoft.ultis.EmpoyeeUtils;
 import com.rikkeisoft.ultis.ExceptedLinkUtils;
+import com.rikkeisoft.ultis.LoadProperties;
 
 public class ThreadGetEmpInf implements Runnable {
-	public final String FILE_CONTAIN_EMPLOYEE_IP = "dhcp.xlsx";
-	public final String SHEET_CONTAIN_EMPLOYEE = "Sheet1";
-	public final String FILE_CONTAIN_BLACK_WHITE_LINKS = "DsDuAn.xlsx";
-	public final String SHEET_CONTAIN_BLACK_LINKS = "Ten_trang_cam";
-	public final String SHEET_CONTAIN_EXCEPTED_LINKS = "DS_du_an";
-	public final String FILE_PROPERTIES = "properties.txt";
-	public final String FILE_LIST_EMPLOYEE_OBJECT = "listEmployees.dat";
-	public final String FILE_LIST_BLACK_OBJECT = "blackLink.dat";
+	private String FILE_CONTAIN_EMPLOYEE_IP = LoadProperties.getProperties().getFileContainEmp();
+	private String SHEET_CONTAIN_EMPLOYEE = LoadProperties.getProperties().getSheetContainEmp();
+	private String FILE_CONTAIN_BLACK_WHITE_LINKS = LoadProperties.getProperties().getFileContainBlackWhiteLinks();
+	private String SHEET_CONTAIN_EXCEPTED_LINKS = LoadProperties.getProperties().getSheetContainExceptedLinks();
+	private String FILE_LIST_EMPLOYEE_OBJECT = LoadProperties.getProperties().getFileListEmpObject();
 
 	final static Logger logger = Logger.getLogger(ThreadGetEmpInf.class);
 

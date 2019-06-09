@@ -24,3 +24,50 @@
 2019-06-09 18:23:11 INFO  App:225 - End: Write list bad employee to file!
 2019-06-09 18:23:11 INFO  App:164 - Run: Send Email!
 2019-06-09 18:23:25 INFO  App:197 - Done: Send email!
+2019-06-09 22:07:00 INFO  App:61 - Run: Over date load from internet!
+2019-06-09 22:07:00 INFO  ThreadGetBlackLink:34 - Run: Thread get black link update file and crawle data from internet
+2019-06-09 22:07:00 INFO  ThreadGetBlackLink:18 - Run: Thread write properties information to file!
+2019-06-09 22:07:00 INFO  ThreadGetEmpInf:40 - Run: Thread get employee infomation and crawle data from internet!
+2019-06-09 22:07:00 INFO  ThreadGetBlackLink:29 - End: Thread write properties information to file!
+2019-06-09 22:07:03 INFO  ThreadGetBlackLink:52 - End: Thread get black link update file and crawle data from internet
+2019-06-09 22:07:03 INFO  App:78 - End: Over date load from internet!
+2019-06-09 22:07:03 INFO  App:98 - Run: Load file log!
+2019-06-09 22:30:40 INFO  App:61 - Run: Over date load from internet!
+2019-06-09 22:30:40 INFO  ThreadGetEmpInf:40 - Run: Thread get employee infomation and crawle data from internet!
+2019-06-09 22:30:40 INFO  ThreadGetBlackLink:20 - Run: Thread write properties information to file!
+2019-06-09 22:30:40 INFO  ThreadGetBlackLink:34 - Run: Thread get black link update file and crawle data from internet
+2019-06-09 22:30:40 INFO  ThreadGetBlackLink:49 - End: Thread write properties information to file!
+2019-06-09 22:30:43 INFO  ThreadGetBlackLink:52 - End: Thread get black link update file and crawle data from internet
+2019-06-09 22:30:43 INFO  App:78 - End: Over date load from internet!
+2019-06-09 22:30:43 INFO  App:98 - Run: Load file log!
+2019-06-09 22:40:11 INFO  App:61 - Run: Over date load from internet!
+2019-06-09 22:42:17 INFO  App:61 - Run: Over date load from internet!
+2019-06-09 22:42:29 INFO  ThreadGetEmpInf:40 - Run: Thread get employee infomation and crawle data from internet!
+2019-06-09 22:52:47 INFO  App:61 - Run: Over date load from internet!
+2019-06-09 22:52:51 INFO  ThreadGetEmpInf:40 - Run: Thread get employee infomation and crawle data from internet!
+2019-06-09 22:59:50 INFO  App:61 - Run: Over date load from internet!
+2019-06-09 22:59:52 INFO  ThreadGetEmpInf:40 - Run: Thread get employee infomation and crawle data from internet!
+2019-06-09 22:59:53 INFO  ThreadGetBlackLink:34 - Run: Thread get black link update file and crawle data from internet
+2019-06-09 22:59:53 INFO  ThreadGetBlackLink:20 - Run: Thread write properties information to file!
+2019-06-09 22:59:53 INFO  ThreadGetBlackLink:49 - End: Thread write properties information to file!
+2019-06-09 23:00:01 INFO  ThreadGetEmpInf:68 - End: Thread get employee infomation and crawle data from internet!
+2019-06-09 23:00:01 INFO  ThreadGetBlackLink:52 - End: Thread get black link update file and crawle data from internet
+2019-06-09 23:00:20 INFO  App:78 - End: Over date load from internet!
+2019-06-09 23:00:43 INFO  App:98 - Run: Load file log!
+2019-06-09 23:03:24 INFO  App:150 - End: Load file log!
+2019-06-09 23:03:24 INFO  App:199 - Run: Write list bad employee to file!
+2019-06-09 23:03:33 INFO  App:222 - End: Write list bad employee to file!
+2019-06-09 23:03:33 INFO  App:161 - Run: Send Email!
+2019-06-09 23:03:48 INFO  App:194 - Done: Send email!
+2019-06-09 23:07:55 INFO  App:80 - Run: Load from local!
+2019-06-09 23:07:55 INFO  ThreadReadEmpIf:22 - Run: Thread get employee infomation from loacal file!
+2019-06-09 23:07:55 INFO  ThreadReadEmpIf:32 - End: Thread get employee infomation from loacal file!
+2019-06-09 23:07:55 INFO  ThreadReadBlackLink:23 - Run: Thread get black links infomation from loacal file!
+2019-06-09 23:07:55 INFO  ThreadReadBlackLink:32 - End: Thread get black links infomation from loacal file!
+2019-06-09 23:07:55 INFO  App:94 - End: Load from local!
+2019-06-09 23:07:55 INFO  App:98 - Run: Load file log!
+2019-06-09 23:08:07 INFO  App:150 - End: Load file log!
+2019-06-09 23:08:07 INFO  App:199 - Run: Write list bad employee to file!
+2019-06-09 23:08:17 INFO  App:222 - End: Write list bad employee to file!
+2019-06-09 23:08:17 INFO  App:161 - Run: Send Email!
+2019-06-09 23:08:40 INFO  App:194 - Done: Send email!

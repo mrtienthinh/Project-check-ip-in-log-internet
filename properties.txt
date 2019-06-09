@@ -1,1 +1,16 @@
-dateFile: 09/06/2019 18:21:22
+last.time.load.from.internet=09/06/2019 22:59:53
+file.contain.black.white.links=DsDuAn.xlsx
+sheet.contain.black.links=Ten_trang_cam
+file.list.black.object=blackLink.dat
+file.contain.emp=dhcp.xlsx
+sheet.contain.emp=Sheet1
+sheet.contain.excepted.links=DS_du_an
+file.list.emp.object=listEmployees.dat
+file.log=192.168.1.1-20190527
+mail.host=smtp.gmail.com
+mail.port=465
+mail.username=lethanh.hlht1993@gmail.com
+mail.password=Lethanh.ht.@
+mail.from.address=lethanh.hlht1993@gmail.com
+mail.from.address=lethanh.hlht1993@gmail.com
+mail.to.address=lethanh.hlht1993@gmail.com

@@ -1,15 +1,12 @@
 package com.rikkeisoft.checkip;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,13 +35,13 @@ import com.rikkeisoft.ultis.LoadProperties;
 import com.rikkeisoft.ultis.LogUtils;
 
 public class App {
-	public static final String FILE_LOG = "192.168.1.1-20190527";
+	public static final String FILE_LOG = LoadProperties.getProperties().getFileLog();
 
-	public static final String FILE_CONTAIN_BLACK_WHITE_LINKS = "DsDuAn.xlsx";
-	private static final String FILE_PROPERTIES = "properties.txt";
+	public static final String FILE_CONTAIN_BLACK_WHITE_LINKS = LoadProperties.getProperties()
+			.getFileContainBlackWhiteLinks();
 
-	private static final String HOST = "smtp.gmail.com";
-	private static final int PORT = 465;
+	private static final String HOST = LoadProperties.getProperties().getMailHost();
+	private static final int PORT = LoadProperties.getProperties().getMailPort();
 	private static final boolean SSL_FLAG = true;
 
 	final static Logger logger = Logger.getLogger(App.class);
@@ -56,7 +53,7 @@ public class App {
 		List<BlackLink> blackLinks = null;
 
 		// Check file properties;
-		Date dateFileBlackWhite = getDateFileBlackWhite(FILE_PROPERTIES);
+		Date dateFileBlackWhite = LoadProperties.getProperties().getModifiledBlackWhiteFile();
 		File fileBlackWhite = new File(FILE_CONTAIN_BLACK_WHITE_LINKS);
 		Date dateToCompare = new Date(fileBlackWhite.lastModified());
 
@@ -162,11 +159,11 @@ public class App {
 
 	private static void sendMail() {
 		logger.info("Run: Send Email!");
-		String userName = "lethanh.hlht1993@gmail.com";
-		String password = "Lethanh.ht.@";
+		String userName = LoadProperties.getProperties().getMailUserName();
+		String password = LoadProperties.getProperties().getMailPassword();
 
-		String fromAddress = "lethanh.hlht1993@gmail.com";
-		String toAddress = "lethanh.hlht1993@gmail.com";
+		String fromAddress = LoadProperties.getProperties().getMailFromAddress();
+		String toAddress = LoadProperties.getProperties().getMailToAddress();
 		String subject = "Test Mail";
 		String message = "Hello from Apache Mail";
 
@@ -223,24 +220,5 @@ public class App {
 		}
 
 		logger.info("End: Write list bad employee to file!");
-	}
-
-	public static Date getDateFileBlackWhite(String pathFile) throws IOException, ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		Date dateFileBlackWhite = null;
-		File fileProperties = new File(pathFile);
-		if (!fileProperties.exists()) {
-			fileProperties.createNewFile();
-			BufferedWriter writer = new BufferedWriter(new FileWriter(pathFile));
-			dateFileBlackWhite = new Date();
-			writer.append("dateFile: " + sdf.format(dateFileBlackWhite));
-			writer.flush();
-			writer.close();
-		} else {
-			LoadProperties loadProperties = new LoadProperties(pathFile);
-			dateFileBlackWhite = loadProperties.getModifiledBlackWhiteFile();
-		}
-
-		return dateFileBlackWhite;
 	}
 }

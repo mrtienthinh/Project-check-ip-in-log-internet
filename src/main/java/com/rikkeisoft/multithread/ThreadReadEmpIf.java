@@ -8,9 +8,10 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.rikkeisoft.model.Employee;
+import com.rikkeisoft.ultis.LoadProperties;
 
 public class ThreadReadEmpIf implements Runnable {
-	private final String FILE_LIST_EMPLOYEE_OBJECT = "listEmployees.dat";
+	private final String FILE_LIST_EMPLOYEE_OBJECT = LoadProperties.getProperties().getFileListEmpObject();
 	private List<Employee> employeeListHaveExceptedLink = null;
 
 	final static Logger logger = Logger.getLogger(ThreadReadEmpIf.class);

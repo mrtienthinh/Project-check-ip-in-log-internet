@@ -8,9 +8,10 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.rikkeisoft.model.BlackLink;
+import com.rikkeisoft.ultis.LoadProperties;
 
 public class ThreadReadBlackLink implements Runnable {
-	public final String FILE_LIST_BLACK_OBJECT = "blackLink.dat";
+	public final String FILE_LIST_BLACK_OBJECT = LoadProperties.getProperties().getFileListBlackObject();
 
 	final static Logger logger = Logger.getLogger(ThreadReadBlackLink.class);
 
